@@ -1,0 +1,42 @@
+﻿<Page x:Class="GameStatistic.ManagerSearchClnt"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GameStatistic"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ManagerSearchClnt">
+
+    <Grid>
+        <Label Background="DimGray" Content="GAMESTATISTICS" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Height="67" Width="800" Padding="270,23,0,0" FontSize="30" FontFamily="Lucida Console"/>
+        <DataGrid x:Name="search_datagrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,113,0,10" HorizontalAlignment="Center" AutoGenerateColumns="False" Width="770">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="*"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding First_name}" Width="*"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Last_name}" Width="*"/>
+                <DataGridTextColumn Header="Почта" Binding="{Binding Email}" Width="*"/>
+                <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="130,80,0,0" VerticalAlignment="Top" Width="193" RenderTransformOrigin="0.5,0.5" FontFamily="Lucida Console" FontSize="18" SelectionChanged="СomboBox_SelectionChanged">
+            <ComboBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.392"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ComboBox.RenderTransform>
+            <ComboBoxItem Content="ID"/>
+            <ComboBoxItem Content="имени"/>
+            <ComboBoxItem Content="фамилии"/>
+            <ComboBoxItem Content="почте"/>
+            <ComboBoxItem Content="номеру телефона"/>
+        </ComboBox>
+        <Label Content="Поиск по" HorizontalAlignment="Left" Margin="28,79,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="18"/>
+        <TextBox x:Name="searchtextbox" HorizontalAlignment="Left" Margin="335,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="298" Height="26" FontFamily="Lucida Console" FontSize="18" TextChanged="SearchTextBox_TextChanged"/>
+        <Button x:Name="btnDelete" Content="Удалить" HorizontalAlignment="Left" Margin="646,79,0,0" VerticalAlignment="Top" Height="25" Width="110" FontSize="16" FontFamily="Lucida Console" Click="btnDelete_Click"/>
+
+    </Grid>
+</Page>
